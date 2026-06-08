@@ -354,6 +354,69 @@
 
   .def-block strong { color: var(--text); font-weight: 600; }
 
+  .quote-box {
+    background: white;
+    border: 1px solid var(--border-mid);
+    border-left: 4px solid var(--pink);
+    border-radius: var(--radius);
+    padding: 16px 20px;
+    margin-bottom: 24px;
+    color: var(--text-mid);
+    font-family: 'Lora', serif;
+    font-size: 15px;
+    line-height: 1.65;
+    font-style: italic;
+    white-space: pre-line;
+    box-shadow: 0 8px 28px rgba(180,120,150,0.08);
+  }
+
+  .difficulty {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    padding: 5px 12px;
+    background: var(--warm);
+    border: 1px solid var(--border);
+    border-radius: 99px;
+    color: var(--text-soft);
+    font-size: 12.5px;
+    font-family: 'Instrument Sans', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  .notebook-divider {
+    color: var(--pink-mid);
+    text-align: center;
+    font-family: 'Lora', serif;
+    font-size: 18px;
+    margin: 6px 0 24px;
+    letter-spacing: 0.02em;
+  }
+
+  .achievement {
+    margin: 28px 0 12px;
+    padding: 12px 16px;
+    background: var(--pink-light);
+    border: 1px solid var(--pink-mid);
+    border-radius: var(--radius);
+    color: var(--pink);
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .section-note {
+    font-size: 14px;
+    color: var(--text-mid);
+    font-style: italic;
+    font-family: 'Lora', serif;
+    line-height: 1.7;
+    text-align: center;
+    margin: 22px 0 4px;
+    white-space: pre-line;
+  }
+
   .section-h {
     font-size: 12px;
     text-transform: uppercase;
@@ -469,6 +532,7 @@
     font-family: 'Lora', serif;
     padding: 8px 0 28px;
     text-align: center;
+    white-space: pre-line;
   }
 
   /* ── QUIZ ── */
@@ -621,6 +685,21 @@
   .memory-card .mn { font-size: 13px; font-weight: 600; color: var(--text); display: block; margin-bottom: 3px; }
   .memory-card .ms { font-size: 12px; color: var(--text-soft); display: block; }
 
+  .final-message {
+    text-align: center;
+    max-width: 560px;
+    margin: 34px auto 0;
+    padding: 28px 24px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--text-mid);
+    font-family: 'Lora', serif;
+    font-size: 16px;
+    line-height: 1.8;
+    white-space: pre-line;
+  }
+
   /* ── CLOSING ── */
   .closing {
     text-align: center;
@@ -644,6 +723,7 @@
     margin-top: 24px;
     font-size: 14px;
     color: var(--text-soft);
+    white-space: pre-line;
   }
 
   /* ── MOBILE MENU ── */
@@ -730,11 +810,10 @@
 <nav class="sidebar" id="sidebar">
   <div class="sidebar-logo">
     <div class="brand">DSA Notes<br/><span>for Parvathy</span> 🌸</div>
-    <div class="tagline">Made with love, just for you.</div>
+    <div class="tagline">Hopefully less scary than it looked in class.</div>
     <div class="progress-bar-wrap">
       <div class="progress-label">
-        <span>Your progress</span>
-        <span id="progress-text">0 / 8</span>
+        <span id="progress-text">🌸 Brain Expansion: 0%</span>
       </div>
       <div class="progress-track">
         <div class="progress-fill" id="progress-fill" style="width: 0%"></div>
@@ -783,7 +862,7 @@
 
     <div class="nav-section-label">Wrap up</div>
     <button class="nav-item" onclick="show('summary', this)">
-      <span class="nav-icon">✨</span> Full Summary
+      <span class="nav-icon">✨</span> Exam Summary
       <span class="nav-check">✓</span>
     </button>
   </div>
@@ -794,13 +873,12 @@
 
   <!-- HERO -->
   <div class="hero">
-    <div class="hero-eyebrow">Your Personal Study Guide</div>
+    <div class="hero-eyebrow">🌸 Notes Made During DSA Adventures 🌸</div>
     <h1>Data Structures &amp;<br/><em>Algorithms</em></h1>
-    <p class="hero-desc">Everything from our notes, all in one place — explained clearly, with examples, analogies, and tiny little quizzes so it actually sticks.</p>
-    <div class="hero-meta">
-      <div class="hero-badge"><span>📚</span> 8 topics covered</div>
-      <div class="hero-badge"><span>💻</span> Python code included</div>
-      <div class="hero-badge"><span>🧠</span> Mini quizzes in each section</div>
+    <p class="hero-desc">Everything we've covered so far, explained in a way that hopefully makes more sense than staring at code for three hours straight.</p>
+    <div class="quote-box">
+      🌸 DSA Rule #1:
+      If the code looks scary, break it into smaller pieces and scare it back.
     </div>
   </div>
 
@@ -814,8 +892,17 @@
         <div>
           <div class="panel-title">What is DSA, really?</div>
           <div class="panel-subtitle">Before we dive into any code.</div>
+          <div class="difficulty">Difficulty: ⭐☆☆☆☆</div>
         </div>
         <button class="panel-complete-btn" onclick="markDone(this, 'intro')">Mark as done ✓</button>
+      </div>
+
+      <!-- If you're reading this, you're a nerd 🌸 -->
+      <div class="notebook-divider">━━━━━━━━━━━━━━ 🌸 ━━━━━━━━━━━━━━</div>
+
+      <div class="quote-box">
+        🌸 Parvathy Wisdom:
+        The bug is never where you first look.
       </div>
 
       <div class="def-block">
@@ -845,6 +932,8 @@ Example:
 
       <div class="joke">You've already been doing data structures — we're just putting names on them now. 🌸</div>
 
+      <div class="achievement">🏆 DSA Initiate</div>
+
       <div class="quiz-section">
         <div class="quiz-header">
           <h3>Quick Check</h3>
@@ -872,18 +961,32 @@ Example:
     </div>
 
     <!-- ── LIST ── -->
+    <!-- This list is legally allowed to contain salad ingredients 🌸 -->
     <div class="panel" id="panel-list">
       <div class="panel-header">
         <div class="panel-emoji">📋</div>
         <div>
           <div class="panel-title">List</div>
           <div class="panel-subtitle">An ordered, changeable collection of items.</div>
+          <div class="difficulty">Difficulty: ⭐☆☆☆☆</div>
         </div>
         <button class="panel-complete-btn" onclick="markDone(this, 'list')">Mark as done ✓</button>
       </div>
 
+      <div class="notebook-divider">━━━━━━━━━━━━━━ 🌸 ━━━━━━━━━━━━━━</div>
+
+      <div class="quote-box">
+        🌸 Parvathy Wisdom:
+        Lists are proof that Python looked at chaos and said, "Fine, I'll organize it."
+      </div>
+
       <div class="def-block">
         A <strong>List</strong> stores multiple items in a single variable, in a fixed order. Items can repeat, you can add/remove/change them any time. It's the most flexible and beginner-friendly structure in Python — and probably the first one you ever used.
+      </div>
+
+      <div class="joke">
+        🌸 Fun Fact: Lists are basically Python's backpack.
+        You keep throwing things inside and somehow it still works.
       </div>
 
       <div class="section-h">What it looks like</div>
@@ -921,7 +1024,17 @@ set(numbers)          <span class="cm"># removes duplicate values</span></div>
         <div class="analogy-text"><strong>Think of it like:</strong> A shopping list. Everything's in order, you can add items, cross things off, or rearrange the whole thing.</div>
       </div>
 
-      <div class="joke">"Lists are the 'I'll do everything myself' data structure."</div>
+      <div class="joke">
+        Current status: List under construction.
+        Have you remembered the meat this time?
+      </div>
+
+      <div class="section-note">
+        🌸 If you understand lists, congratulations.
+        You've already used the most common data structure in Python.
+      </div>
+
+      <div class="achievement">🏆 List Apprentice</div>
 
       <div class="quiz-section">
         <div class="quiz-header"><h3>Quick Check</h3><span class="quiz-badge">2 questions</span></div>
@@ -947,14 +1060,23 @@ set(numbers)          <span class="cm"># removes duplicate values</span></div>
     </div>
 
     <!-- ── STACK ── -->
+    <!-- Emergency assignment pile detected 🌸 -->
     <div class="panel" id="panel-stack">
       <div class="panel-header">
         <div class="panel-emoji">📚</div>
         <div>
           <div class="panel-title">Stack</div>
           <div class="panel-subtitle">Last In, First Out — LIFO.</div>
+          <div class="difficulty">Difficulty: ⭐⭐☆☆☆</div>
         </div>
         <button class="panel-complete-btn" onclick="markDone(this, 'stack')">Mark as done ✓</button>
+      </div>
+
+      <div class="notebook-divider">━━━━━━━━━━━━━━ 🌸 ━━━━━━━━━━━━━━</div>
+
+      <div class="quote-box">
+        🌸 Parvathy Wisdom:
+        If Stack and Queue look the same, you're probably sleep deprived.
       </div>
 
       <div class="def-block">
@@ -999,7 +1121,15 @@ len(stack) == 0    <span class="cm"># Check if empty</span></div>
         <div class="analogy-text"><strong>Think of it like:</strong> A pile of plates. You always place a new plate on top, and always take from the top. Nobody digs from the bottom.</div>
       </div>
 
-      <div class="joke">"The last one to arrive gets VIP exit privileges."</div>
+      <div class="joke">
+        🌸 Last In First Out.
+        Just like a stack of plates...
+        or my assignments during exam week 😭
+      </div>
+
+      <div class="section-note">🌸 If plates make sense, stacks make sense.</div>
+
+      <div class="achievement">🏆 Stack Survivor</div>
 
       <div class="quiz-section">
         <div class="quiz-header"><h3>Quick Check</h3><span class="quiz-badge">2 questions</span></div>
@@ -1031,8 +1161,16 @@ len(stack) == 0    <span class="cm"># Check if empty</span></div>
         <div>
           <div class="panel-title">Queue</div>
           <div class="panel-subtitle">First In, First Out — FIFO.</div>
+          <div class="difficulty">Difficulty: ⭐⭐☆☆☆</div>
         </div>
         <button class="panel-complete-btn" onclick="markDone(this, 'queue')">Mark as done ✓</button>
+      </div>
+
+      <div class="notebook-divider">━━━━━━━━━━━━━━ 🌸 ━━━━━━━━━━━━━━</div>
+
+      <div class="quote-box">
+        🌸 Parvathy Wisdom:
+        Fairness is rare in life, but queues are trying their best.
       </div>
 
       <div class="def-block">
@@ -1072,7 +1210,16 @@ Queue (FIFO):  add → [10, 20, 30] → remove from LEFT  (10 leaves first)</div
         <div class="analogy-text"><strong>Think of it like:</strong> A queue at a counter. You join at the back, you're served from the front. Cutting in line is not allowed (and also illegal in this data structure).</div>
       </div>
 
-      <div class="joke">"The only data structure that actually respects the queue."</div>
+      <div class="joke">
+        🌸 Finally a data structure that understands
+        that cutting in line is rude.
+      </div>
+
+      <div class="section-note">
+        🌸 Unlike real life, nobody can cut the line here.
+      </div>
+
+      <div class="achievement">🏆 Queue Enjoyer</div>
 
       <div class="quiz-section">
         <div class="quiz-header"><h3>Quick Check</h3><span class="quiz-badge">2 questions</span></div>
@@ -1104,8 +1251,16 @@ Queue (FIFO):  add → [10, 20, 30] → remove from LEFT  (10 leaves first)</div
         <div>
           <div class="panel-title">Dictionary</div>
           <div class="panel-subtitle">Key-value pairs for fast, meaningful lookups.</div>
+          <div class="difficulty">Difficulty: ⭐⭐☆☆☆</div>
         </div>
         <button class="panel-complete-btn" onclick="markDone(this, 'dict')">Mark as done ✓</button>
+      </div>
+
+      <div class="notebook-divider">━━━━━━━━━━━━━━ 🌸 ━━━━━━━━━━━━━━</div>
+
+      <div class="quote-box">
+        🌸 Parvathy Wisdom:
+        If you name things properly, future-you suffers slightly less.
       </div>
 
       <div class="def-block">
@@ -1147,7 +1302,17 @@ students.items()             <span class="cm"># Get all key-value pairs</span>
         <div class="analogy-text"><strong>Think of it like:</strong> Your phone contacts. You search by name, not "contact number 47." The name is the key, the phone number is the value.</div>
       </div>
 
-      <div class="joke">"Instead of remembering where something is, dictionaries remember what it's called."</div>
+      <div class="joke">
+        🌸 Dictionaries are basically Python's memory.
+        Instead of asking "Where is it?"
+        Python asks "What's its name?"
+      </div>
+
+      <div class="section-note">
+        🌸 Dictionary rule: remember the key, and Python does the searching.
+      </div>
+
+      <div class="achievement">🏆 Dictionary Detective</div>
 
       <div class="quiz-section">
         <div class="quiz-header"><h3>Quick Check</h3><span class="quiz-badge">2 questions</span></div>
@@ -1179,8 +1344,16 @@ students.items()             <span class="cm"># Get all key-value pairs</span>
         <div>
           <div class="panel-title">Singly Linked List</div>
           <div class="panel-subtitle">Nodes connected in one direction.</div>
+          <div class="difficulty">Difficulty: ⭐⭐⭐☆☆</div>
         </div>
         <button class="panel-complete-btn" onclick="markDone(this, 'sll')">Mark as done ✓</button>
+      </div>
+
+      <div class="notebook-divider">━━━━━━━━━━━━━━ 🌸 ━━━━━━━━━━━━━━</div>
+
+      <div class="quote-box">
+        🌸 Parvathy Wisdom:
+        If linked lists confuse you, that's normal. They confuse everyone at first.
       </div>
 
       <div class="def-block">
@@ -1227,7 +1400,18 @@ After:  [10] → [30] → None
         <div class="analogy-text"><strong>Think of it like:</strong> Train compartments. Each compartment only knows the one ahead of it. To reach compartment 5, you have to walk through 1, 2, 3, 4.</div>
       </div>
 
-      <div class="joke">"Every node knows exactly one friend."</div>
+      <div class="joke">
+        🌸 Every node knows where the next node is.
+        Kind of like passing a message through friends,
+        except hopefully more reliable 😭
+      </div>
+
+      <div class="section-note">
+        🌸 If you lose the head, you lose the list.
+        Very dramatic, very linked list behavior.
+      </div>
+
+      <div class="achievement">🏆 Linked List Warrior</div>
 
       <div class="quiz-section">
         <div class="quiz-header"><h3>Quick Check</h3><span class="quiz-badge">2 questions</span></div>
@@ -1259,8 +1443,16 @@ After:  [10] → [30] → None
         <div>
           <div class="panel-title">Doubly Linked List</div>
           <div class="panel-subtitle">Nodes connected in both directions.</div>
+          <div class="difficulty">Difficulty: ⭐⭐⭐⭐☆</div>
         </div>
         <button class="panel-complete-btn" onclick="markDone(this, 'dll')">Mark as done ✓</button>
+      </div>
+
+      <div class="notebook-divider">━━━━━━━━━━━━━━ 🌸 ━━━━━━━━━━━━━━</div>
+
+      <div class="quote-box">
+        🌸 Parvathy Wisdom:
+        Communication improves when everyone remembers who came before them.
       </div>
 
       <div class="def-block">
@@ -1306,7 +1498,16 @@ Doubly:  [10] ⇄ [20] ⇄ [30]          (both ways)</div>
         <div class="analogy-text"><strong>Think of it like:</strong> Your browser history. The Back button follows <code>prev</code>, the Forward button follows <code>next</code>. Both directions are remembered.</div>
       </div>
 
-      <div class="joke">"Nodes finally decided communication should go both ways."</div>
+      <div class="joke">
+        🌸 Character development.
+        The nodes finally learned communication should go both ways.
+      </div>
+
+      <div class="section-note">
+        🌸 Doubly linked lists are just singly linked lists after a communication workshop.
+      </div>
+
+      <div class="achievement">🏆 Doubly Linked Diplomat</div>
 
       <div class="quiz-section">
         <div class="quiz-header"><h3>Quick Check</h3><span class="quiz-badge">2 questions</span></div>
@@ -1332,14 +1533,24 @@ Doubly:  [10] ⇄ [20] ⇄ [30]          (both ways)</div>
     </div>
 
     <!-- ── CIRCULAR LINKED LIST ── -->
+    <!-- If this loops forever, blame the pointer, not yourself 🌸 -->
     <div class="panel" id="panel-cll">
       <div class="panel-header">
         <div class="panel-emoji">♾️</div>
         <div>
           <div class="panel-title">Circular Linked List</div>
           <div class="panel-subtitle">The last node loops back to the first.</div>
+          <div class="difficulty">Difficulty: ⭐⭐⭐⭐☆</div>
         </div>
         <button class="panel-complete-btn" onclick="markDone(this, 'cll')">Mark as done ✓</button>
+      </div>
+
+      <div class="notebook-divider">━━━━━━━━━━━━━━ 🌸 ━━━━━━━━━━━━━━</div>
+
+      <div class="quote-box">
+        🌸 Parvathy Wisdom:
+        If it works, don't touch it.
+        If it doesn't work, touch it carefully.
       </div>
 
       <div class="def-block">
@@ -1391,7 +1602,16 @@ Circular: [10] → [20] → [30] → [10]   (loops forever)</div>
         <div class="analogy-text"><strong>Think of it like:</strong> Songs on repeat. After the last song ends, it wraps straight back to the first one. The playlist never truly "ends."</div>
       </div>
 
-      <div class="joke">"This linked list looked at endings and said 'nah.'"</div>
+      <div class="joke">
+        🌸 The last node points back to the first.
+        This data structure has never heard of goodbyes.
+      </div>
+
+      <div class="section-note">
+        🌸 Circular linked lists are playlists with commitment issues.
+      </div>
+
+      <div class="achievement">🏆 Circular Madness Victim</div>
 
       <div class="quiz-section">
         <div class="quiz-header"><h3>Quick Check</h3><span class="quiz-badge">2 questions</span></div>
@@ -1421,29 +1641,38 @@ Circular: [10] → [20] → [30] → [10]   (loops forever)</div>
       <div class="panel-header">
         <div class="panel-emoji">✨</div>
         <div>
-          <div class="panel-title">Full Summary</div>
+          <div class="panel-title">🌸 The "Please Let Me Pass The Exam" Summary 🌸</div>
           <div class="panel-subtitle">Everything at a glance — you've earned this.</div>
+          <div class="difficulty">Difficulty: ⭐⭐⭐☆☆</div>
         </div>
         <button class="panel-complete-btn" onclick="markDone(this, 'summary')">Mark as done ✓</button>
+      </div>
+
+      <div class="notebook-divider">━━━━━━━━━━━━━━ 🌸 ━━━━━━━━━━━━━━</div>
+
+      <div class="quote-box">
+        🌸 Parvathy Wisdom:
+        Revision is just debugging your memory.
       </div>
 
       <table class="summary-table">
         <thead>
           <tr>
             <th>Structure</th>
+            <th>Difficulty</th>
             <th>Core idea</th>
             <th>Key rule</th>
             <th>Remember it as</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td>📋 List</td><td>Ordered collection</td><td>Access by index</td><td>Shopping list 🛒</td></tr>
-          <tr><td>📚 Stack</td><td>Pile of items</td><td>LIFO — last in, first out</td><td>Stack of plates 🍽️</td></tr>
-          <tr><td>🚶 Queue</td><td>Line of items</td><td>FIFO — first in, first out</td><td>Queue at a counter 🧍</td></tr>
-          <tr><td>📖 Dictionary</td><td>Key : Value pairs</td><td>Search by key, not index</td><td>Phone contacts 📱</td></tr>
-          <tr><td>🔗 Singly Linked</td><td>Node chain</td><td>Forward only → None</td><td>Train compartments 🚂</td></tr>
-          <tr><td>🔄 Doubly Linked</td><td>Node chain, both ways</td><td>prev + next pointers</td><td>Browser history 🌐</td></tr>
-          <tr><td>♾️ Circular Linked</td><td>Node chain, looped</td><td>Last node → first node</td><td>Songs on repeat 🎵</td></tr>
+          <tr><td>📋 List</td><td>⭐☆☆☆☆</td><td>Ordered collection</td><td>Access by index</td><td>Shopping list 🛒</td></tr>
+          <tr><td>📚 Stack</td><td>⭐⭐☆☆☆</td><td>Pile of items</td><td>LIFO — last in, first out</td><td>Stack of plates 🍽️</td></tr>
+          <tr><td>🚶 Queue</td><td>⭐⭐☆☆☆</td><td>Line of items</td><td>FIFO — first in, first out</td><td>Queue at a counter 🧍</td></tr>
+          <tr><td>📖 Dictionary</td><td>⭐⭐☆☆☆</td><td>Key : Value pairs</td><td>Search by key, not index</td><td>Phone contacts 📱</td></tr>
+          <tr><td>🔗 Singly Linked</td><td>⭐⭐⭐☆☆</td><td>Node chain</td><td>Forward only → None</td><td>Train compartments 🚂</td></tr>
+          <tr><td>🔄 Doubly Linked</td><td>⭐⭐⭐⭐☆</td><td>Node chain, both ways</td><td>prev + next pointers</td><td>Browser history 🌐</td></tr>
+          <tr><td>♾️ Circular Linked</td><td>⭐⭐⭐⭐☆</td><td>Node chain, looped</td><td>Last node → first node</td><td>Songs on repeat 🎵</td></tr>
         </tbody>
       </table>
 
@@ -1455,7 +1684,18 @@ Singly LL → "I only know what's ahead."
 Doubly LL → "I know both my neighbors."
 Circular LL → "I refuse to end."</div>
 
-      <div class="section-h">Memory grid</div>
+      <!-- Tiny revision corner. Bring snacks. 🌸 -->
+      <div class="section-h">☕ Revision Corner</div>
+      <div class="quote-box">
+        🍽️ Stack → Plates
+        🚶 Queue → Line of People
+        📱 Dictionary → Contacts
+        🚂 Singly LL → Train
+        🌐 Doubly LL → Browser History
+        🎵 Circular LL → Playlist on Repeat
+      </div>
+
+      <div class="section-h">Memory tricks</div>
       <div class="memory-grid">
         <div class="memory-card"><span class="me">🍽️</span><span class="mn">Stack</span><span class="ms">Pile of plates</span></div>
         <div class="memory-card"><span class="me">🧍</span><span class="mn">Queue</span><span class="ms">Line of people</span></div>
@@ -1465,11 +1705,45 @@ Circular LL → "I refuse to end."</div>
         <div class="memory-card"><span class="me">🎵</span><span class="mn">Circular Linked</span><span class="ms">Playlist on repeat</span></div>
       </div>
 
+      <div class="joke">
+        If any of this looks confusing today,
+        don't worry.
+
+        Every programmer has stared at a linked list
+        and wondered who approved this idea 🌸
+      </div>
+
       <div class="closing">
         <span class="flower">🌸</span>
-        <p>You made it through all of it. Every node, every pointer, every LIFO and FIFO and circular loop. That wasn't easy, and you still got here.</p>
-        <p style="margin-top: 14px;">You're doing better than you think. Always.</p>
-        <div class="sig">Made with love — just for you. 🌸</div>
+        <p>
+          You've officially learned more than just Python syntax.
+          Now you're learning how data actually gets organized behind the scenes.
+        </p>
+
+        <div class="joke">
+          Take medicine before attempting DSA.
+          Give some rest to your mind too.
+          Parent-approved educational program still loading.
+        </div>
+
+        <div class="sig">
+          🌸 Good luck Parvathy.
+          And remember: if Stack, Queue, and Linked Lists start looking the same,
+          it's probably time for a snack break.
+        </div>
+
+        <div class="final-message">
+          🌸
+
+          If you made it this far, you've learned more than you think.
+
+          A lot of people stop at variables and loops.
+          You kept going.
+
+          Keep being curious.
+
+          - Edwin
+        </div>
       </div>
     </div>
 
@@ -1502,10 +1776,23 @@ Circular LL → "I refuse to end."</div>
   }
 
   function updateProgress() {
-    const total = 8;
+    const total = document.querySelectorAll('.nav-item').length;
     const count = done.size;
-    document.getElementById('progress-text').textContent = count + ' / ' + total;
-    document.getElementById('progress-fill').style.width = (count / total * 100) + '%';
+    const percent = Math.round(count / total * 100);
+    let message = '🌸 Brain Expansion: ' + percent + '%';
+
+    if (percent >= 100) {
+      message = '100% - Certified Data Structure Survivor';
+    } else if (percent >= 75) {
+      message = '75% - Interviewers are nervous';
+    } else if (percent >= 50) {
+      message = '50% - DSA is no longer winning';
+    } else if (percent >= 25) {
+      message = '25% - Getting Dangerous';
+    }
+
+    document.getElementById('progress-text').textContent = message;
+    document.getElementById('progress-fill').style.width = percent + '%';
   }
 
   function answer(el, correct, qid, feedback) {
